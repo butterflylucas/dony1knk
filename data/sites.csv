@@ -1,0 +1,6 @@
+site_id,site_name,domain,title,description,color_scheme,logo_url,keywords
+1,tech-startup,tech-startup.com,Tech Startup,Innovative Technology Solutions,blue,https://example.com/logo1.png,"technology, innovation, startup"
+2,ecommerce-shop,ecommerce-shop.com,E-Commerce Shop,Online Shopping Platform,green,https://example.com/logo2.png,"shopping, ecommerce, products"
+3,restaurant-chain,restaurant-chain.com,Restaurant Chain,Fine Dining Experience,red,https://example.com/logo3.png,"restaurant, food, dining"
+4,photography-studio,photography-studio.com,Photography Studio,Professional Photography Services,purple,https://example.com/logo4.png,"photography, studio, professional"
+5,consulting-firm,consulting-firm.com,Consulting Firm,Business Strategy Consulting,orange,https://example.com/logo5.png,"consulting, business, strategy"
