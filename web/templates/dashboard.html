@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - 批量建站系统{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>📊 仪表板</h1>
+        <p>批量建站系统管理界面</p>
+    </div>
+
+    <!-- 统计卡片 -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">📁</div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.total_sites }}</div>
+                <div class="stat-label">总网站数</div>
+            </div>
+        </div>
+
+        <div class="stat-card success">
+            <div class="stat-icon">✓</div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.deployed }}</div>
+                <div class="stat-label">已部署</div>
+            </div>
+        </div>
+
+        <div class="stat-card warning">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.pending }}</div>
+                <div class="stat-label">待处理</div>
+            </div>
+        </div>
+
+        <div class="stat-card error">
+            <div class="stat-icon">✗</div>
+            <div class="stat-content">
+                <div class="stat-value">{{ stats.failed }}</div>
+                <div class="stat-label">失败</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 快速操作 -->
+    <div class="quick-actions">
+        <h2>快速操作</h2>
+        <div class="action-buttons">
+            <a href="/generate" class="btn btn-primary">🚀 生成网站</a>
+            <a href="/deploy" class="btn btn-success">📤 部署网站</a>
+            <a href="/domains" class="btn btn-info">🔗 管理域名</a>
+            <a href="/settings" class="btn btn-secondary">⚙️ 配置设置</a>
+        </div>
+    </div>
+
+    <!-- 最近活动 -->
+    <div class="recent-activity">
+        <h2>最近活动</h2>
+        <table class="activity-table">
+            <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>事件</th>
+                    <th>状态</th>
+                    <th>详情</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for activity in activities %}
+                <tr>
+                    <td>{{ activity.time }}</td>
+                    <td>{{ activity.event }}</td>
+                    <td>
+                        <span class="badge badge-{{ activity.status }}">
+                            {{ activity.status }}
+                        </span>
+                    </td>
+                    <td>{{ activity.details }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
