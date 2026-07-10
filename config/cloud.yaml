@@ -1,0 +1,23 @@
+cloud_provider: aliyun          # 云服务商: aliyun, aws, tencentcloud, qiniu
+region: cn-hangzhou              # 区域
+bucket: my-website-bucket         # OSS 桶名
+access_key: YOUR_ACCESS_KEY       # 访问密钥
+secret_key: YOUR_SECRET_KEY       # 密钥
+domain: cdn.example.com           # CDN 域名
+
+# DNS 配置
+dns_provider: aliyun              # DNS 提供商
+dns_access_key: YOUR_ACCESS_KEY
+dns_secret_key: YOUR_SECRET_KEY
+
+# SSL 证书配置
+ssl_enabled: true
+ssl_provider: aliyun              # SSL 证书提供商
+auto_renew: true                  # 自动续期
+
+# 部署配置
+deploy_options:
+  concurrent_uploads: 5           # 并发上传数
+  retry_count: 3                  # 重试次数
+  timeout: 300                    # 超时时间(秒)
+  compress: true                  # 是否压缩文件
