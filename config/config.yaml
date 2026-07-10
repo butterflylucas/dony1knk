@@ -1,0 +1,65 @@
+app_name: batch-site-builder
+version: 1.0.0
+debug: false
+
+# 数据处理配置
+data_processing:
+  encoding: utf-8
+  delimiter: ','
+  validate_data: true
+  defaults:
+    title: "Untitled Site"
+    description: "Auto-generated website"
+    language: "zh-CN"
+
+# 网站生成配置
+site_generation:
+  output_dir: output
+  template_dir: templates
+  default_template: default
+  max_workers: 4
+  compression:
+    enabled: true
+    level: 6
+
+# 部署配置
+deployment:
+  max_workers: 4
+  timeout: 600
+  retry_attempts: 3
+
+# 域名管理配置
+domain_management:
+  auto_bind: true
+  ttl: 600
+  providers:
+    aliyun: true
+    aws: true
+    cloudflare: true
+
+# 日志配置
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_dir: logs
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# 性能配置
+performance:
+  enable_cache: true
+  cache_ttl: 3600
+  batch_size: 50
+  memory_limit: 1024  # MB
+
+# 通知配置
+notifications:
+  enabled: false
+  email:
+    enabled: false
+    smtp_server: smtp.example.com
+    smtp_port: 587
+    sender: admin@example.com
+  webhook:
+    enabled: false
+    url: http://example.com/webhook
